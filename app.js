@@ -95,7 +95,7 @@ class Tamagotchi {
   startGame() {
     //Checks if the tamagotchi has a name first before starting the game
     if (this.name === null) {
-      let petName = prompt("What would you like to name Bruce Wayne's pet?");
+      let petName = prompt("What would you like to name your virtual pet?");
       //Check if valid name is provided to petName
       if (petName) {
         this.name = petName;
@@ -165,6 +165,7 @@ class Tamagotchi {
     this.updateUI();
     //We want to re-enable the start game button after the game restarts
     document.querySelector("#start-game").disabled = false;
+    //change image back to baby image
     document.querySelector("#tamagotchi-image").src = "../images/baby-tamagotchi.png";
   }
 }
