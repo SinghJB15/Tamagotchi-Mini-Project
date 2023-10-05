@@ -87,10 +87,15 @@ button:hover {
 }
 
 #petStatus h2 {
-    color: #4aa1f0;
+    color: black;
 }
 
 footer {
     width: 100%; 
+}
+
+.night-mode {
+    color: black;
+    background-image: url("../images/night-time.jpg");
 }
 

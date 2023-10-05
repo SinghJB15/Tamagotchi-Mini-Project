@@ -59,13 +59,14 @@ class Tamagotchi {
     //Change image to night time image when sleep function is called
     let bodyTag = document.querySelector("body");
     bodyTag.style.backgroundImage = 'url("../images/night-time.jpg")';
-    //Change text color to white for better visibility
-    bodyTag.style.color = "white";
+    //Adding the night-mode class
+    bodyTag.classList.add("night-mode");
 
     //After 2500ms, this function will run to revert image back to day time and original colors
     setTimeout(() => {
       bodyTag.style.backgroundImage = 'url("../images/day-time.jpg")';
-      bodyTag.style.color = "black";
+      //Removing the night-mode class
+      bodyTag.classList.remove("night-mode");
     }, 2000);
   }
 
@@ -221,7 +222,7 @@ document.querySelector("#sleep").addEventListener("click", () => {
   myPet.updateUI();
 });
 
-//Event listern to play with pet
+//Event listener to play with pet
 document.querySelector("#play").addEventListener("click", () => {
   myPet.play();
   //Each time user clicks play button, the user interface will get updated immediatley
