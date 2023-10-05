@@ -11,23 +11,23 @@
     <header>
         <h1>Tamagotchi</h1>
         <p>Welcome to your new virtual pet!</p>
-        <p>In this game, your goal is to manage your Tamagotchi's <span id="hungerHighlight">Hunger</span>, <span id="sleepinessHighlight">Sleepiness</span>, and <span id="boredomHighlight">Boredom</span> levels. Ensure that none of these metrics reach 10.</p>
-        <p>Utilize the <span id="feedBtnHighlight">Feed</span>, <span id="sleepBtnHighlight">Sleep</span>, and <span id="playBtnHighlight">Play</span> buttons to take care of your pet and keep it alive and happy. Start your journey by clicking "<span id="startBtnHighlight">Start Game</span>"!</p>
+        <p>In this game, your goal is to manage your Tamagotchi's <span class="metric-label">Hunger</span>, <span class="metric-label">Sleepiness</span>, and <span class="metric-label">Boredom</span> levels. Ensure that none of these metrics reach <span class="metric-label">10</span>.</p>
+        <p>Utilize the <span class="button-label">Feed</span>, <span class="button-label">Sleep</span>, and <span class="button-label">Play</span> buttons to take care of your pet and keep it alive and happy. Start your journey by clicking "<span class="button-label">Start Game</span>"!</p>
     </header>
     <main id="gameArea">
         <section id="petStatus">
             <h2 id="name">Pet Name</h2>
             <div id="metrics">
-                <p id="hunger"><span class="metricLabel">Hunger:</span> 0</p>
-                <p id="sleepiness"><span class="metricLabel">Sleepiness:</span> 0</p>
-                <p id="boredom"><span class="metricLabel">Boredom:</span> 0</p>
-                <p id="age"><span class="metricLabel">Age:</span> 0</p>
+                <p id="hunger"><span class="metric-label">Hunger:</span> 0</p>
+                <p id="sleepiness"><span class="metric-label">Sleepiness:</span> 0</p>
+                <p id="boredom"><span class="metric-label">Boredom:</span> 0</p>
+                <p id="age"><span class="metric-label">Age:</span> 0</p>
             </div>
             <section id="buttons">
-                <button id="start-game">Start Game</button>
-                <button id="feed">Feed</button>
-                <button id="sleep">Sleep</button>
-                <button id="play">Play</button>
+                <button id="start-game"><span class="button-label">Start Game</span></button>
+                <button id="feed"><span class="button-label">Feed</span></button>
+                <button id="sleep"><span class="button-label">Sleep</span></button>
+                <button id="play"><span class="button-label">Play</span></button>
             </section>
             <div id="petImage">
                 <img id="tamagotchi-image" src="../images/baby-tamagotchi.png" alt="Pet Image"/>
