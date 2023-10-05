@@ -5,6 +5,8 @@ class Tamagotchi {
     this.sleepiness = 0;
     this.boredom = 0;
     this.age = 0;
+    this.ageInterval = null;
+    this.metricIntervals = null;
   }
 
   increaseAge() {
@@ -48,10 +50,34 @@ class Tamagotchi {
     }
   }
 
+  //   checkMetric() {
+  //     //Condition statement to check when the game will end
+  //     if (this.hunger === 10 || this.sleepiness === 10 || this.boredom === 10) {
+  //       alert("game over!");
+  //       clearInterval(this.ageInterval);
+  //       clearInterval(this.metricIntervals);
+  //       this.restartGame();
+  //     }
+  //   }
+
   checkMetric() {
-    //Condition statement to check when the game will end
-    if (this.hunger === 10 || this.sleepiness === 10 || this.boredom === 10) {
-      alert("game over!");
+    if (this.hunger === 10) {
+      alert("Game over! The pet has died of starvation!");
+      clearInterval(this.ageInterval);
+      clearInterval(this.metricIntervals);
+      this.restartGame();
+    }
+    if (this.sleepiness === 10) {
+      alert("Game over! The pet has died from lack of sleep!");
+      clearInterval(this.ageInterval);
+      clearInterval(this.metricIntervals);
+      this.restartGame();
+    }
+    if (this.boredom === 10) {
+      alert("Game Over! The has died from boredom!");
+      clearInterval(this.ageInterval);
+      clearInterval(this.metricIntervals);
+      this.restartGame();
     }
   }
 
@@ -85,12 +111,12 @@ class Tamagotchi {
 
   runIntervals() {
     //Increment age after x seconds
-    const ageInterval = setInterval(() => {
+    this.ageInterval = setInterval(() => {
       this.increaseAge();
     }, 2000);
 
     //Increment all metric values after x seconds
-    const metricIntervals = setInterval(() => {
+    this.metricIntervals = setInterval(() => {
       this.increaseHunger();
       this.increaseSleepiness();
       this.increaseBoredom();
@@ -99,6 +125,18 @@ class Tamagotchi {
       //Update the UI each time the metric values get incremented
       this.updateUI();
     }, 2500);
+  }
+
+  restartGame() {
+    this.name = null;
+    this.age = 0;
+    this.hunger = 0;
+    this.sleepiness = 0;
+    this.boredom = 0;
+    //After the metrics reset to 0 we want to update the UI
+    this.updateUI();
+    //We want to re-enable the start game button after the game restarts
+    document.querySelector("#start-game").disabled = false;
   }
 }
 
