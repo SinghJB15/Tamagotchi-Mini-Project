@@ -28,4 +28,22 @@ class Tamagotchi {
             this.boredom++
         }
     }
+
+    feed() {
+        if(this.feed > 0) {
+            this.feed--;
+        }
+    }
+
+    sleep() {
+        if(this.sleepiness > 0) {
+            this.sleepiness--;
+        }
+    }
+
+    play() {
+        if(this.boredom > 0) {
+            this.boredom--;
+        }
+    }
 }
