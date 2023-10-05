@@ -109,6 +109,7 @@ class Tamagotchi {
     ).innerHTML = `Sleepiness: ${this.sleepiness}`;
     document.querySelector("#boredom").innerHTML = `Boredom: ${this.boredom}`;
     document.querySelector("#age").innerHTML = `Age: ${this.age}`;
+    document.querySelector("#name").innerHTML = this.name || "Pet Name";
   }
 
   startGame() {
