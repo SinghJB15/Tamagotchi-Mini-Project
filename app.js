@@ -1,6 +1,6 @@
 class Tamagotchi {
-    constructor(name){
-        this.name = name;
+    constructor() {
+        this.name = null;
         this.hunger = 0;
         this.sleepiness = 0;
         this.boredom = 0;
@@ -60,4 +60,15 @@ class Tamagotchi {
         document.querySelector("#boredom").innerHTML = `Boredom: ${this.boredom}`;
         document.querySelector("#age").innerHTML = `Age: ${this.age}`;
     }
+
+    startGame() {
+        let petName = prompt("What would you like to name Bruce Wayne's pet?");
+        this.name = petName;
+        document.querySelector("name").innerHTML = petName;
+        this.increaseAge();
+        this.increaseHunger();
+        this.increaseSleepiness();
+        this.increaseBoredom();
+    }
 }
+
