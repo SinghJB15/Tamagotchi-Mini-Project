@@ -10,21 +10,28 @@
 <body>
     <header>
         <h1>Batman's Tamagotchi</h1>
-        <p>Welcome, caretaker! While Bruce Wayne is out during the night, your task is to take care of his cherished pet. Keep its Hunger, Sleepiness, and Boredome below 10 to ensure it stays happy and healthy. Click the buttons to feed, put to sleep, and play with the pet and monitor the metrics below. If any of them reach 10, it's game over</p>
+        <p>Welcome, caretaker! ...</p>
     </header>
-    <section id="petStatus">
-        <h2 id="name">Pet Name</h2>
-        <p id="hunger">Hunger: 0</p>
-        <p id="sleepiness">Sleepiness: 0</p>
-        <p id="boredom">Boredom: 0</p>
-        <p id="age">Age: 0</p>
-    </section>
-    <section id="buttons">
-        <button id="start-game">Start Game</button>
-        <button id="feed">Feed</button>
-        <button id="sleep">Sleep</button>
-        <button id="play">Play</button>
-    </section>
+    <main id="gameArea">
+        <section id="petStatus">
+            <h2 id="name">Pet Name</h2>
+            <div id="metrics">
+                <p id="hunger">Hunger: 0</p>
+                <p id="sleepiness">Sleepiness: 0</p>
+                <p id="boredom">Boredom: 0</p>
+                <p id="age">Age: 0</p>
+            </div>
+            <section id="buttons">
+                <button id="start-game">Start Game</button>
+                <button id="feed">Feed</button>
+                <button id="sleep">Sleep</button>
+                <button id="play">Play</button>
+            </section>
+            <div id="petImage">
+                <img id="tamagotchi-image" src="../images/baby-tamagotchi.png" alt="Pet Image"/>
+            </div>
+        </section>
+    </main>
     <footer>
         <p>Keep a vigilinte eye on the pet's metrics, and be the hero it deserves!</p>
     </footer>
