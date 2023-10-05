@@ -12,6 +12,7 @@ class Tamagotchi {
   increaseAge() {
     this.age++;
     this.updateUI();
+    this.updateImg();
   }
 
   increaseHunger() {
@@ -49,16 +50,6 @@ class Tamagotchi {
       this.boredom--;
     }
   }
-
-  //   checkMetric() {
-  //     //Condition statement to check when the game will end
-  //     if (this.hunger === 10 || this.sleepiness === 10 || this.boredom === 10) {
-  //       alert("game over!");
-  //       clearInterval(this.ageInterval);
-  //       clearInterval(this.metricIntervals);
-  //       this.restartGame();
-  //     }
-  //   }
 
   checkMetric() {
     if (this.hunger === 10) {
@@ -125,6 +116,19 @@ class Tamagotchi {
       //Update the UI each time the metric values get incremented
       this.updateUI();
     }, 2500);
+  }
+
+  updateImg() {
+    let tamImage = document.querySelector("#tamagotchi-image");
+    if(this.age < 6) {
+      tamImage.src = "../images/baby-tamagotchi.png"
+    } else if(this.age < 13) {
+      tamImage.src = "../images/child-tamagotchi.png"
+    } else if(this.age < 20) {
+      tamImage.src = "../images/teenager-tamagotchi.png"
+    } else {
+      tamImage.src = "../images/adult-tamagotchi.png"
+    }
   }
 
   restartGame() {
