@@ -31,8 +31,8 @@ class Tamagotchi {
     }
 
     feed() {
-        if(this.feed > 0) {
-            this.feed--;
+        if(this.hunger > 0) {
+            this.hunger--;
         }
     }
 
@@ -90,13 +90,35 @@ class Tamagotchi {
             this.checkMetric();
             //Update the UI each time the metric values get incremented
             this.updateUI();
-        }, 3500)
+        }, 2500)
     }
 }
 
 const myPet = new Tamagotchi;
 
+//Event Listeners
+//Event listener to start game
 document.querySelector("#start-game").addEventListener("click", () => {
     myPet.startGame();
 })
 
+//Event listener to feed pet
+document.querySelector("#feed").addEventListener("click", () => {
+    myPet.feed();
+    //Each time user clicks feed button, the UI will get updated immediatley
+    myPet.updateUI();
+})
+
+//Event listener to put pet to sleep
+document.querySelector("#sleep").addEventListener("click", () => {
+    myPet.sleep();
+    //Each time user clicks sleep button, the UI will get updated immediatley
+    myPet.updateUI();
+})
+
+//Event listern to play with pet
+document.querySelector("#play").addEventListener("click", () => {
+    myPet.play();
+    //Each time user clicks play button, the UI will get updated immediatley
+    myPet.updateUI();
+})
