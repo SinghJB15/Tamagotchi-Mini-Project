@@ -5,7 +5,6 @@ class Tamagotchi {
         this.sleepiness = 0;
         this.boredom = 0;
         this.age = 0;
-        this.metricIntervals = null;
     }
 
     increaseAge() {
@@ -68,17 +67,24 @@ class Tamagotchi {
             let petName = prompt("What would you like to name Bruce Wayne's pet?");
             this.name = petName;
             document.querySelector("#name").innerHTML = petName;
-
-            this.metricIntervals = setInterval(() => {
-                this.increaseHunger();
-                this.increaseSleepiness();
-                this.increaseBoredom();
-                this.checkMetric();
-                this.updateUI();
-            }, 2000)
+            //Once user inputs a pet name, then runIntervals function will run to update metric values
+            this.runIntervals();
         } else {
             alert("You must input a name in order to play the game")
         }
+    }
+
+    runIntervals() {
+        //Method to increment all metric values after a few seconds
+        const intervals = setInterval(() => {
+            this.increaseHunger();
+            this.increaseSleepiness();
+            this.increaseBoredom();
+            //After metric values get incremented we will run checkMetric() to check if the game will end
+            this.checkMetric();
+            //Update the UI each time the metric values get incremented
+            this.updateUI();
+        }, 2000)
     }
 }
 
