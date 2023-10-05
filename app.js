@@ -59,13 +59,13 @@ class Tamagotchi {
     }
     let bodyTag = document.querySelector("body");
     //Change background image to the night-time image
-    bodyTag.style.backgroundImage = 'url("/images/night-time.jpg")';
+    bodyTag.style.backgroundImage = 'url("images/night-time.jpg")';
     //Add night mode class to body element
     bodyTag.classList.add("night-mode");
 
     //After 2000ms, this function will run to revert image back to day time and original colors
     setTimeout(() => {
-      bodyTag.style.backgroundImage = 'url("/images/day-time.jpg")';
+      bodyTag.style.backgroundImage = 'url("images/day-time.jpg")';
       //Removing the night-mode class
       bodyTag.classList.remove("night-mode");
     }, 2000);
