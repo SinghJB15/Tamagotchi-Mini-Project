@@ -1,5 +1,5 @@
 body {
-  background-image: url("../images/day-time.jpg");
+  background-image: url("images/day-time.jpg");
   background-size: cover;
   background-repeat: no-repeat;
   background-attachment: fixed;
@@ -96,5 +96,5 @@ footer {
 
 .night-mode {
   color: black;
-  background-image: url("../images/night-time.jpg");
+  background-image: url("images/night-time.jpg");
 }

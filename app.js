@@ -59,13 +59,13 @@ class Tamagotchi {
     }
     let bodyTag = document.querySelector("body");
     //Change background image to the night-time image
-    bodyTag.style.backgroundImage = 'url("../images/night-time.jpg")';
+    bodyTag.style.backgroundImage = 'url("images/night-time.jpg")';
     //Add night mode class to body element
     bodyTag.classList.add("night-mode");
 
     //After 2000ms, this function will run to revert image back to day time and original colors
     setTimeout(() => {
-      bodyTag.style.backgroundImage = 'url("../images/day-time.jpg")';
+      bodyTag.style.backgroundImage = 'url("images/day-time.jpg")';
       //Removing the night-mode class
       bodyTag.classList.remove("night-mode");
     }, 2000);
@@ -158,10 +158,10 @@ class Tamagotchi {
     //Check the age of the Tamagotchi to determine which stage it is in and update the image accordingly
     if (this.age < 6) {
       //If age is less than 6, the tamagotchi is in the "baby" stage
-      tamImage.src = "../images/baby-tamagotchi.png";
+      tamImage.src = "images/baby-tamagotchi.png";
     } else if (this.age < 13) {
       //If age is between 6 and 12, the Tamagotchi evolves to the "child" stage
-      tamImage.src = "../images/child-tamagotchi.png";
+      tamImage.src = "images/child-tamagotchi.png";
       //If the current stage is not "child", update it and alert the user
       if (this.currentStage !== "child") {
         this.currentStage = "child";
@@ -169,7 +169,7 @@ class Tamagotchi {
       }
     } else if (this.age < 20) {
       //If age is between 13 and 19, the Tamagotchi evolves to the "teenager" stage
-      tamImage.src = "../images/teenager-tamagotchi.png";
+      tamImage.src = "images/teenager-tamagotchi.png";
       if (this.currentStage !== "teenager") {
         //If the current stage is not "teenager", update it and alert the user
         this.currentStage = "teenager";
@@ -177,7 +177,7 @@ class Tamagotchi {
       }
     } else if (this.age >= 20) {
       //If age is 20 or more, the Tamagotchi evolves to the "adult" stage
-      tamImage.src = "../images/adult-tamagotchi.png";
+      tamImage.src = "images/adult-tamagotchi.png";
       if (this.currentStage !== "adult") {
         //If the current stage is not "adult", update it and alert the user
         this.currentStage = "adult";
@@ -199,7 +199,7 @@ class Tamagotchi {
     document.querySelector("#start-game").disabled = false;
     //Change image back to baby image
     document.querySelector("#tamagotchi-image").src =
-      "../images/baby-tamagotchi.png";
+      "images/baby-tamagotchi.png";
   }
 }
 
