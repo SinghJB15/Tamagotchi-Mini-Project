@@ -1,41 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style.css" />
     <script src="./app.js" defer></script>
     <title>Tamagotchi</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Tamagotchi</h1>
-        <p>Welcome to your new virtual pet!</p>
-        <p>In this game, your goal is to manage your Tamagotchi's <span class="metric-label">Hunger</span>, <span class="metric-label">Sleepiness</span>, and <span class="metric-label">Boredom</span> levels. Ensure that none of these metrics reach <span class="metric-label">10</span>.</p>
-        <p>Utilize the <span class="button-label">Feed</span>, <span class="button-label">Sleep</span>, and <span class="button-label">Play</span> buttons to take care of your pet and keep it alive and happy. Start your journey by clicking "<span class="button-label">Start Game</span>"!</p>
+      <h1>Tamagotchi</h1>
+      <p>Welcome to your new virtual pet!</p>
+      <p>
+        In this game, your goal is to manage your Tamagotchi's
+        <span class="metric-label">Hunger</span>,
+        <span class="metric-label">Sleepiness</span>, and
+        <span class="metric-label">Boredom</span> levels. Ensure that none of
+        these metrics reach <span class="metric-label">10</span>.
+      </p>
+      <p>
+        Utilize the <span class="button-label">Feed</span>,
+        <span class="button-label">Sleep</span>, and
+        <span class="button-label">Play</span> buttons to take care of your pet
+        and keep it alive and happy. Start your journey by clicking "<span
+          class="button-label"
+          >Start Game</span
+        >"!
+      </p>
     </header>
     <main id="gameArea">
-        <section id="petStatus">
-            <h2 id="name">Pet Name</h2>
-            <div id="metrics">
-                <p id="hunger"><span class="metric-label">Hunger:</span> 0</p>
-                <p id="sleepiness"><span class="metric-label">Sleepiness:</span> 0</p>
-                <p id="boredom"><span class="metric-label">Boredom:</span> 0</p>
-                <p id="age"><span class="metric-label">Age:</span> 0</p>
-            </div>
-            <section id="buttons">
-                <button id="start-game"><span class="button-label">Start Game</span></button>
-                <button id="feed"><span class="button-label">Feed</span></button>
-                <button id="sleep"><span class="button-label">Sleep</span></button>
-                <button id="play"><span class="button-label">Play</span></button>
-            </section>
-            <div id="petImage">
-                <img id="tamagotchi-image" src="../images/baby-tamagotchi.png" alt="Pet Image"/>
-            </div>
+      <section id="petStatus">
+        <h2 id="name">Pet Name</h2>
+        <div id="metrics">
+          <p id="hunger"><span class="metric-label">Hunger:</span> 0</p>
+          <p id="sleepiness"><span class="metric-label">Sleepiness:</span> 0</p>
+          <p id="boredom"><span class="metric-label">Boredom:</span> 0</p>
+          <p id="age"><span class="metric-label">Age:</span> 0</p>
+        </div>
+        <section id="buttons">
+          <button id="start-game">
+            <span class="button-label">Start Game</span>
+          </button>
+          <button id="feed"><span class="button-label">Feed</span></button>
+          <button id="sleep"><span class="button-label">Sleep</span></button>
+          <button id="play"><span class="button-label">Play</span></button>
         </section>
+        <div id="petImage">
+          <img
+            id="tamagotchi-image"
+            src="../images/baby-tamagotchi.png"
+            alt="Pet Image"
+          />
+        </div>
+      </section>
     </main>
     <footer>
-        <p>Be attentive and caring, ensuring a lively and joyful virtual pet!</p>
+      <p>Be attentive and caring, ensuring a lively and joyful virtual pet!</p>
     </footer>
-</body>
+  </body>
 </html>
