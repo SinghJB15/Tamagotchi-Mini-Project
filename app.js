@@ -5,6 +5,7 @@ class Tamagotchi {
         this.sleepiness = 0;
         this.boredom = 0;
         this.age = 0;
+        this.metricIntervals = null;
     }
 
     increaseAge() {
@@ -62,13 +63,28 @@ class Tamagotchi {
     }
 
     startGame() {
-        let petName = prompt("What would you like to name Bruce Wayne's pet?");
-        this.name = petName;
-        document.querySelector("name").innerHTML = petName;
-        this.increaseAge();
-        this.increaseHunger();
-        this.increaseSleepiness();
-        this.increaseBoredom();
+        //Checks if the tamagotchi has a name first before starting the game
+        if(this.name === null) {
+            let petName = prompt("What would you like to name Bruce Wayne's pet?");
+            this.name = petName;
+            document.querySelector("#name").innerHTML = petName;
+
+            this.metricIntervals = setInterval(() => {
+                this.increaseHunger();
+                this.increaseSleepiness();
+                this.increaseBoredom();
+                this.checkMetric();
+                this.updateUI();
+            }, 2000)
+        } else {
+            alert("You must input a name in order to play the game")
+        }
     }
 }
+
+const myPet = new Tamagotchi;
+
+document.querySelector("#start-game").addEventListener("click", () => {
+    myPet.startGame();
+})
 
