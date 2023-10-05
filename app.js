@@ -43,6 +43,17 @@ class Tamagotchi {
     if (this.sleepiness > 0) {
       this.sleepiness--;
     }
+    //Change image to night time image when sleep function is called
+    let bodyTag = document.querySelector("body");
+    bodyTag.style.backgroundImage = 'url("../images/night-time.jpg")';
+    //Change text color to white for better visibility
+    bodyTag.style.color = "white";
+
+    //After 2500ms, this function will run to revert image back to day time and original colors
+    setTimeout(() => {
+      bodyTag.style.backgroundImage = 'url("../images/day-time.jpg")';
+      bodyTag.style.color = "black";
+    }, 2000);
   }
 
   play() {
@@ -74,9 +85,7 @@ class Tamagotchi {
 
   updateUI() {
     document.querySelector("#hunger").innerHTML = `Hunger: ${this.hunger}`;
-    document.querySelector(
-      "#sleepiness"
-    ).innerHTML = `Sleepiness: ${this.sleepiness}`;
+    document.querySelector("#sleepiness").innerHTML = `Sleepiness: ${this.sleepiness}`;
     document.querySelector("#boredom").innerHTML = `Boredom: ${this.boredom}`;
     document.querySelector("#age").innerHTML = `Age: ${this.age}`;
   }
@@ -120,14 +129,14 @@ class Tamagotchi {
 
   updateImg() {
     let tamImage = document.querySelector("#tamagotchi-image");
-    if(this.age < 6) {
-      tamImage.src = "../images/baby-tamagotchi.png"
-    } else if(this.age < 13) {
-      tamImage.src = "../images/child-tamagotchi.png"
-    } else if(this.age < 20) {
-      tamImage.src = "../images/teenager-tamagotchi.png"
+    if (this.age < 6) {
+      tamImage.src = "../images/baby-tamagotchi.png";
+    } else if (this.age < 13) {
+      tamImage.src = "../images/child-tamagotchi.png";
+    } else if (this.age < 20) {
+      tamImage.src = "../images/teenager-tamagotchi.png";
     } else {
-      tamImage.src = "../images/adult-tamagotchi.png"
+      tamImage.src = "../images/adult-tamagotchi.png";
     }
   }
 
