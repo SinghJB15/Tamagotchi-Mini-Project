@@ -5,6 +5,8 @@ class Tamagotchi {
     this.sleepiness = 0;
     this.boredom = 0;
     this.age = 0;
+    //Tamagotchi starts as a baby
+    this.currentStage = "baby";
     this.ageInterval = null;
     this.metricIntervals = null;
   }
@@ -124,7 +126,7 @@ class Tamagotchi {
       this.checkMetric();
       //Update the UI each time the metric values get incremented
       this.updateUI();
-    }, 2500);
+    }, 3000);
   }
 
   updateImg() {
@@ -133,12 +135,25 @@ class Tamagotchi {
       tamImage.src = "../images/baby-tamagotchi.png";
     } else if (this.age < 13) {
       tamImage.src = "../images/child-tamagotchi.png";
+      if(this.currentStage !== "child") {
+        this.currentStage = "child";
+        alert(`Your tamagotchi has evolved to: ${this.currentStage}`);
+      }
     } else if (this.age < 20) {
       tamImage.src = "../images/teenager-tamagotchi.png";
-    } else {
+      if(this.currentStage !== "teenager") {
+        this.currentStage = "teenager";
+        alert(`Your tamagotchi has evolved to: ${this.currentStage}`);
+      }
+    } else if (this.age >= 20) {
       tamImage.src = "../images/adult-tamagotchi.png";
+      if(this.currentStage !== "adult") {
+        this.currentStage = "adult";
+        alert(`Your tamagotchi has evolved to: ${this.currentStage}`);
+      }
     }
   }
+
 
   restartGame() {
     this.name = null;
@@ -150,6 +165,7 @@ class Tamagotchi {
     this.updateUI();
     //We want to re-enable the start game button after the game restarts
     document.querySelector("#start-game").disabled = false;
+    document.querySelector("#tamagotchi-image").src = "../images/baby-tamagotchi.png";
   }
 }
 
