@@ -74,6 +74,9 @@ class Tamagotchi {
         document.querySelector("#name").innerHTML = petName;
         //Once user inputs a pet name, then runIntervals function will run to update metric values
         this.runIntervals();
+        //Disable the startGame button
+        let startGameButton = document.querySelector("#start-game");
+        startGameButton.disabled = true;
       } else {
         alert("You must input a name in order to play the game");
       }
