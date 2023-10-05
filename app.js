@@ -46,4 +46,18 @@ class Tamagotchi {
             this.boredom--;
         }
     }
+
+    checkMetric() {
+        //Condition statement to check when the game will end
+        if(this.hunger === 10 || this.sleepiness === 10 || this.boredom === 10) {
+            alert('game over!')
+        }
+    }
+
+    updateUI() {
+        document.querySelector("#hunger").innerHTML = `Hunger: ${this.hunger}`;
+        document.querySelector("#sleepiness").innerHTML = `Sleepiness: ${this.sleepiness}`;
+        document.querySelector("#boredom").innerHTML = `Boredom: ${this.boredom}`;
+        document.querySelector("#age").innerHTML = `Age: ${this.age}`;
+    }
 }
