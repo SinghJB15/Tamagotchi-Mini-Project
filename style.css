@@ -51,10 +51,24 @@ button:hover {
     font-weight: bold;
 }
 
+
+@keyframes moveRightAndLeft {
+    0% {
+        transform: translateX(-200px);
+    }
+    50% {
+        transform: translateX(200px);
+    }
+    100% {
+        transform: translateX(-200px);
+    }
+}
+
 #tamagotchi-image {
     width: 150px;
     height: 150px;
     object-fit: cover;
+    animation: moveRightAndLeft 7s ease-in-out infinite
 }
 
 #petStatus {
@@ -79,3 +93,4 @@ button:hover {
 footer {
     width: 100%; /* Ensuring footer takes full width */
 }
+
