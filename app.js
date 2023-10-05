@@ -9,6 +9,7 @@ class Tamagotchi {
 
     increaseAge() {
         this.age++;
+        this.updateUI();
     }
 
     increaseHunger() {
@@ -50,7 +51,7 @@ class Tamagotchi {
     checkMetric() {
         //Condition statement to check when the game will end
         if(this.hunger === 10 || this.sleepiness === 10 || this.boredom === 10) {
-            alert('game over!')
+            alert('game over!');
         }
     }
 
@@ -75,8 +76,13 @@ class Tamagotchi {
     }
 
     runIntervals() {
-        //Method to increment all metric values after a few seconds
-        const intervals = setInterval(() => {
+        //Increment age after x seconds
+        const ageInterval = setInterval(() => {
+            this.increaseAge();
+        }, 2000)
+
+        //Increment all metric values after x seconds
+        const metricIntervals = setInterval(() => {
             this.increaseHunger();
             this.increaseSleepiness();
             this.increaseBoredom();
@@ -84,7 +90,7 @@ class Tamagotchi {
             this.checkMetric();
             //Update the UI each time the metric values get incremented
             this.updateUI();
-        }, 2000)
+        }, 3500)
     }
 }
 
